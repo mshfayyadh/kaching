@@ -1,6 +1,7 @@
 Project Title	:	KaCHING!
 
 Motivation : 
+
 We are planning to develop a mobile application that can manage a person’s personal spending. Most people spend too much because they are unable to keep track of their money. KaCHING! helps to solve the problem by depicting their monthly spending as a pie chart. With this information, they will be more aware of their spendings. This app can also help them to see what they spent on most.
 
 Member :
