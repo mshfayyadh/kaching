@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:kaching/screens/about.dart';
-import 'package:kaching/screens/dashboard.dart';
-import 'package:kaching/screens/login.dart';
+import 'screens/about.dart';
 import 'screens/addScreen.dart';
+import 'screens/dashboard.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,7 +20,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => dashboardScreen(),
-        '/second': (context) => Addscreen(),
+        '/add': (context) => Addscreen(),
+        '/about': (context) => AboutScreen(),
       },
     );
   }
