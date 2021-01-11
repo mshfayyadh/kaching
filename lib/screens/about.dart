@@ -5,7 +5,12 @@ class AboutScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          leading: Icon(Icons.arrow_back, color: Colors.black),
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
           title: Text('About', style: TextStyle(color: Colors.black)),
           backgroundColor: Colors.white,
         ),

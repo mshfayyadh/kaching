@@ -89,7 +89,11 @@ packages:
     source: hosted
     version: "1.8.0-nullsafety.1"
   pie_chart:
+<<<<<<< HEAD
     dependency: "direct main"
+=======
+    dependency: "direct dev"
+>>>>>>> 538869ac7580b24b95356bf0d3b2b952eeb98e2b
     description:
       name: pie_chart
       url: "https://pub.dartlang.org"
