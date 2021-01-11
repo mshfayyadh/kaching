@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pie_chart/pie_chart.dart';
+import 'package:ka_ching/models/income.dart';
+import 'package:ka_ching/models/expense.dart';
 
 class dashboardScreen extends StatefulWidget {
   @override
@@ -7,6 +9,9 @@ class dashboardScreen extends StatefulWidget {
 }
 
 class _dashboardScreenState extends State<dashboardScreen> {
+  Income i;
+  Expense e;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -95,7 +100,7 @@ class _dashboardScreenState extends State<dashboardScreen> {
                                     fontWeight: FontWeight.bold
                               )),
                           ),
-                          PieChart(dataMap: dataMap)
+                          PieChart(dataMap: e.expense)
                         ],
                       )
                     )
@@ -127,7 +132,7 @@ class _dashboardScreenState extends State<dashboardScreen> {
                             SizedBox(
                               height: 10,
                             ),
-                            pieChart(dataMap: dataMap),
+                            pieChart(dataMap: e.expense)
                           ],
                         ),
                       ),
@@ -159,7 +164,7 @@ class _dashboardScreenState extends State<dashboardScreen> {
                             SizedBox(
                               height: 10,
                             ),
-                            pieChart(dataMap: dataMap),
+                            pieChart(dataMap: i.income),
                           ],
                         ),
                       ),
