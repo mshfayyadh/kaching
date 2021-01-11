@@ -53,8 +53,10 @@ class WelcomeScreen extends StatelessWidget {
             padding: EdgeInsets.symmetric(vertical: 15, horizontal: 133),
             color: Colors.yellow,
             textColor: Colors.white,
-            onPressed: () {},
-            child: Text("Login", style: TextStyle(fontSize: 15.0, height: 1.0)),
+            onPressed: () {
+              Navigator.pushNamed(context, '/id');
+            },
+            child: Text("Login", style: TextStyle(fontSize: 19.0, height: 1.0, fontWeight: FontWeight.bold)),
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
           ),

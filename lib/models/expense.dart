@@ -1,9 +1,11 @@
 class Expense
 {
   String details;
-  double value;
+  double value =9;
 
-  Map<String, double> expense = {
+  Expense({this.details,this.value});
+
+  Map<String, double> expense() => {
     "Food": 5,
     "Gadget": 3,
     "Health": 2,

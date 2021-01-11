@@ -10,10 +10,10 @@ class PreviousRec extends StatefulWidget {
 }
 
 class _PreviousRecState extends State<PreviousRec> {
-  Income i;
-  Expense e;
+  final i = Income();
+  final e = Expense();
   int type = 1;
-  String dropdownValue = "Incomes";
+  String dropdownValue = "January";
   List<String> months =
   ['January', 'February','March', 'April','May', 'June','July', 'August','September', 'October','November', 'December'];
 
@@ -47,52 +47,47 @@ class _PreviousRecState extends State<PreviousRec> {
       ),
       body: Column(
           children: [
+            SizedBox(height: 20),
             Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    buildContainer("Income",e.expense)
-                  ],
-                ),
-                Divider(),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    buildContainer("Income",i.income)
-                  ],
-                ),
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                buildContainer("Expenses",e.expense())
+              ],
+            ),
+            Divider(),
+            SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                buildContainer("Incomes",i.income())
+              ],
+            ),
           ]
-      ),
-          
+      ),   
     );
-    
   }
 
   Container buildContainer(String caption,Map type) {
     return Container(
-                    width: 380,
-                    height: 250,
-                    child: RaisedButton(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)),
-                      color: Color(0xFFF5F6F9),
-                      onPressed: () {},
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          ListTile(
-                            title: Text(caption,
-                                style: TextStyle(
-                                    height: 1,
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold)),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          pieChart(dataMap: type),
-                        ],
-                      ),
-                    ),
-                  );
+      width: 380,
+      height: 250,
+      child: RaisedButton(
+        elevation: 5,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10)),
+          color: Colors.white,
+          onPressed: () {},
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              ListTile(
+                title: Text(caption, style: TextStyle(height: 1, fontSize: 18, fontWeight: FontWeight.bold)),
+              ),
+              SizedBox(height: 10,),
+              pieChart(dataMap: type),
+            ]
+          ),
+      ),
+    );
   }
 }
