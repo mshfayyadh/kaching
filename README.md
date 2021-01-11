@@ -1,16 +1,13 @@
-# ka_ching
+Project Title	:	KaCHING!
 
-A new Flutter application.
+Motivation : 
+We are planning to develop a mobile application that can manage a person’s personal spending. Most people spend too much because they are unable to keep track of their money. KaCHING! helps to solve the problem by depicting their monthly spending as a pie chart. With this information, they will be more aware of their spendings. This app can also help them to see what they spent on most.
 
-## Getting Started
+Member :
+1. Afif Hafizin Bin Hamizan (A18CS0008)
+2. Izzat Marzuqi Bin GHali (A18CS0080)
+3. Muhammad Fayyadh Bin Mohd Salehoddin (A18CS0137)
+4. Risshe A/L Peter (A18CS0241)
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Video links:
+Proposal - https://www.youtube.com/watch?v=SCTi45wYl3E&ab_channel=fayyadhsalehoddin
