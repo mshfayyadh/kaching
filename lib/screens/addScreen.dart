@@ -139,7 +139,6 @@ createAlertDialog(BuildContext context,String details){
           children: <Widget>[
             Text(
               details,
-              //style: TextStyle(color: Colors.yellow[700]),
             ),
             SizedBox(height: 10),
             TextField(
