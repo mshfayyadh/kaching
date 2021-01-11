@@ -8,10 +8,10 @@ class dashboardScreen extends StatefulWidget {
 
 class _dashboardScreenState extends State<dashboardScreen> {
   Map<String, double> dataMap = {
-    "Flutter": 5,
-    "React": 3,
-    "Xamarin": 2,
-    "Ionic": 2,
+    "Food": 5,
+    "Gadget": 3,
+    "Health": 2,
+    "Entertainment": 2,
   };
   @override
   Widget build(BuildContext context) {
@@ -137,6 +137,37 @@ class _dashboardScreenState extends State<dashboardScreen> {
                               height: 10,
                             ),
                             pieChart(dataMap: dataMap),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                Divider(),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Container(
+                      width: 380,
+                      height: 250,
+                      child: RaisedButton(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        color: Color(0xFFF5F6F9),
+                        onPressed: () {},
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            ListTile(
+                              title: Text('Transaction',
+                                  style: TextStyle(
+                                      height: 1,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold)),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
                           ],
                         ),
                       ),
