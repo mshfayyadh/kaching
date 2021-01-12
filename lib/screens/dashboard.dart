@@ -41,15 +41,14 @@ class _dashboardScreenState extends State<dashboardScreen> {
                       height: 0, fontSize: 40, fontWeight: FontWeight.bold),
                 )),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                      width: 190,
-                      child: RaisedButton(
+                      width: 195,
+                      child: Card(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
                         color: Color(0xFFF5F6F9),
-                        onPressed: () {},
                         child: Column(
                           children: [
                             Text('Income',
@@ -61,12 +60,11 @@ class _dashboardScreenState extends State<dashboardScreen> {
                       ),
                     ),
                     Container(
-                      width: 190,
-                      child: RaisedButton(
+                      width: 195,
+                      child: Card(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
                         color: Color(0xFFF5F6F9),
-                        onPressed: () {},
                         child: Column(
                           children: [
                             Text('Expenses',
@@ -79,18 +77,16 @@ class _dashboardScreenState extends State<dashboardScreen> {
                     ),
                   ],
                 ),
-                Divider(),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Container(
-                      width: 380,
+                      width: 395,
                       height: 250,
-                      child: RaisedButton(
+                      child: Card(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
                         color: Color(0xFFF5F6F9),
-                        onPressed: () {},
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
@@ -111,18 +107,16 @@ class _dashboardScreenState extends State<dashboardScreen> {
                     ),
                   ],
                 ),
-                Divider(),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Container(
-                      width: 380,
+                      width: 395,
                       height: 250,
-                      child: RaisedButton(
+                      child: Card(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
                         color: Color(0xFFF5F6F9),
-                        onPressed: () {},
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
@@ -143,18 +137,16 @@ class _dashboardScreenState extends State<dashboardScreen> {
                     ),
                   ],
                 ),
-                Divider(),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Container(
-                      width: 380,
+                      width: 395,
                       height: 250,
-                      child: RaisedButton(
+                      child: Card(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
                         color: Color(0xFFF5F6F9),
-                        onPressed: () {},
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
