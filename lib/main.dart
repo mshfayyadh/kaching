@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:ka_ching/models/expense.dart';
+import 'package:ka_ching/models/income.dart';
+import 'package:ka_ching/screens/login.dart';
+import 'package:ka_ching/screens/previous_records.dart';
 import 'screens/about.dart';
 import 'screens/addScreen.dart';
 import 'screens/dashboard.dart';
@@ -19,8 +23,10 @@ class MyApp extends StatelessWidget {
       //home: AboutScreen(),
       initialRoute: '/',
       routes: {
-        '/': (context) => dashboardScreen(),
+        '/': (context) => WelcomeScreen(),
+        '/id': (context) =>dashboardScreen(),
         '/add': (context) => Addscreen(),
+        '/record': (context) => PreviousRec(),
         '/about': (context) => AboutScreen(),
       },
     );
