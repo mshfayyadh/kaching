@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:map_profile/edit_profile.dart';
-import 'package:map_profile/models/profile_data.dart';
+import 'package:ka_ching/models/profile_data.dart';
+
+import 'edit_profile.dart';
 
 class MyProfile extends StatefulWidget {
   final ProfileData data;

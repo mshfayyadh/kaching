@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:map_profile/models/profile_data.dart';
+import 'package:ka_ching/models/profile_data.dart';
 //import 'dart:async';
 
 class EditProfile extends StatefulWidget {

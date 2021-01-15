@@ -58,8 +58,7 @@ class _dashboardScreenState extends State<dashboardScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Container(
-                    width: 375,
-                    height: 250,
+                    width: 390,
                     child: Card(
                       elevation: 5,
                       shape: RoundedRectangleBorder(
@@ -72,8 +71,28 @@ class _dashboardScreenState extends State<dashboardScreen> {
                             title: Text('Transaction',
                                 style: TextStyle(
                                     height: 1,
-                                    fontSize: 18,
+                                    fontSize: 20,
                                     fontWeight: FontWeight.bold)),
+                          ),
+                          ListTile(
+                            title: Text('Pay for food',
+                                style: TextStyle(fontSize: 18)),
+                            subtitle: Text(
+                              '- RM 20.00',
+                              style: TextStyle(color: Colors.red),
+                            ),
+                          ),
+                          ListTile(
+                            title: Text('Pay for transportation fee',
+                                style: TextStyle(fontSize: 18)),
+                            subtitle: Text('- RM 10.00',
+                                style: TextStyle(color: Colors.red)),
+                          ),
+                          ListTile(
+                            title: Text('Income from BPN',
+                                style: TextStyle(fontSize: 18)),
+                            subtitle: Text('+ RM 100.00',
+                                style: TextStyle(color: Colors.green)),
                           ),
                           SizedBox(
                             height: 10,

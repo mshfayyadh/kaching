@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:map_profile/settings_black.dart';
+import 'package:ka_ching/screens/settings_black.dart';
 
 class Settings extends StatefulWidget {
   @override
