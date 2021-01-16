@@ -60,6 +60,8 @@ class _Settings extends State<Settings> {
                       ListTile(
                         subtitle: Text("Log Out"),
                         title: Text("Switch Account"),
+                        onTap: () => Navigator.popUntil(
+                            context, ModalRoute.withName('/')),
                       ),
                     ],
                   ),

@@ -16,7 +16,8 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  ProfileData profile = new ProfileData("Afif", "Marzuqi", "am@gmail.com", "013-3333310");
+  ProfileData profile =
+      new ProfileData("Afif", "Marzuqi", "am@gmail.com", "013-3333310");
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => WelcomeScreen(),
         '/load': (context) => SplashScreen(),
-        '/id': (context) =>dashboardScreen(),
+        '/id': (context) => dashboardScreen(),
         '/add': (context) => Addscreen(),
         '/record': (context) => PreviousRec(),
         '/profile': (context) => MyProfile(profile),

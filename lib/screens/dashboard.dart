@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ka_ching/models/profile_data.dart';
 import 'package:pie_chart/pie_chart.dart';
 import 'package:ka_ching/models/income.dart';
 import 'package:ka_ching/models/expense.dart';
