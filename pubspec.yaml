@@ -23,6 +23,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  animated_splash_screen: ^1.0.1+2
   cupertino_icons: ^1.0.0
   pie_chart: ^4.0.1
 

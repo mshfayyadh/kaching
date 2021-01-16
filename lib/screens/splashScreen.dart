@@ -1,27 +1,24 @@
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:ka_ching/screens/dashboard.dart';
 
+ 
 class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Center(
-            child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-          Container(
-              child: Image(
-            height: 200,
-            width: 200,
-            image: AssetImage('assets/images/logo2.png'),
-          )),
-          SizedBox(height: 30),
-          Container(
-            child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  CircularProgressIndicator(),
-                ]),
-          )
-        ])));
+    return AnimatedSplashScreen(
+      splash: Container(
+        child: Image(
+          height: 500,
+          width: 500,
+          image: AssetImage('assets/images/logo2.png'),
+        )
+      ),
+      nextScreen: dashboardScreen(),
+      splashTransition: SplashTransition.fadeTransition,
+      //pageTransitionType: PageTransitionType.scale,
+    );
   }
+  
 }
+

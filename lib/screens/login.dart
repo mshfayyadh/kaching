@@ -54,7 +54,7 @@ class WelcomeScreen extends StatelessWidget {
             color: Colors.yellow,
             textColor: Colors.white,
             onPressed: () {
-              Navigator.pushNamed(context, '/id');
+              Navigator.pushNamed(context, '/load');
             },
             child: Text("Login", style: TextStyle(fontSize: 19.0, height: 1.0, fontWeight: FontWeight.bold)),
             shape:
