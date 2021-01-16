@@ -34,7 +34,7 @@ class _EditProfile extends State<EditProfile> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.yellow,
+        backgroundColor: Colors.white,
         elevation: 1,
         leading: IconButton(
           icon: Icon(

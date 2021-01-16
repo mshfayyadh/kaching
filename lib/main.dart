@@ -5,6 +5,7 @@ import 'package:ka_ching/models/profile_data.dart';
 import 'package:ka_ching/screens/login.dart';
 import 'package:ka_ching/screens/my_profile.dart';
 import 'package:ka_ching/screens/previous_records.dart';
+import 'package:ka_ching/screens/settings.dart';
 import 'package:ka_ching/screens/splashScreen.dart';
 import 'screens/about.dart';
 import 'screens/addScreen.dart';
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
         '/add': (context) => Addscreen(),
         '/record': (context) => PreviousRec(),
         '/profile': (context) => MyProfile(profile),
+        '/setting': (context) => Settings(),
         '/about': (context) => AboutScreen(),
       },
     );
