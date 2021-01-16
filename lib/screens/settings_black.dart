@@ -56,12 +56,9 @@ class _SettingsBlack extends State<SettingsBlack> {
                         tileColor: Colors.black,
                         trailing: Switch(
                           value: true,
-                          onChanged: (bool val) => Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (BuildContext context) => Settings(),
-                            ),
+                          onChanged: (bool val) => Navigator.pop(context),
                           ),
-                        ),
+                    
                       ),
                       ListTile(
                         subtitle: Text(

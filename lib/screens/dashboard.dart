@@ -132,11 +132,15 @@ class _dashboardScreenState extends State<dashboardScreen> {
             Divider(color: Colors.black),
             ListTile(
               title: Text('Edit Profile'),
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, '/profile');
+              },
             ),
             ListTile(
               title: Text('Setting'),
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, '/setting');
+              },
             ),
             ListTile(
               title: Text('About'),
