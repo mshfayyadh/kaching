@@ -42,7 +42,6 @@ class _dashboardScreenState extends State<dashboardScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   buildContainer1("Income", 0.00),
-                  SizedBox(width: 3),
                   buildContainer1("Expense", 0.00),
                 ],
               ),
@@ -68,7 +67,7 @@ class _dashboardScreenState extends State<dashboardScreen> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           ListTile(
-                            title: Text('Transaction',
+                            title: Text('Recent Transaction',
                                 style: TextStyle(
                                     height: 1,
                                     fontSize: 20,
