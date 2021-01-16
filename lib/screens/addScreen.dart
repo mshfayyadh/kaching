@@ -40,18 +40,25 @@ class _AddscreenState extends State<Addscreen> {
             }),
       ),
       body: Center(
-          child: Container(
-              color: Colors.white,
-              child: (type % 2 == 1) ? IncomeButton() : ExpenseButton())),
+        child: Container(
+            color: Colors.white,
+            child: (type % 2 == 1) ? IncomeButton() : ExpenseButton()
+        )
+      ),
     );
   }
 }
 
-class IncomeButton extends StatelessWidget {
+class IncomeButton extends StatefulWidget {
   const IncomeButton({
     Key key,
   }) : super(key: key);
 
+  @override
+  _IncomeButtonState createState() => _IncomeButtonState();
+}
+
+class _IncomeButtonState extends State<IncomeButton> {
   final String parent = "Parents support",
       scholar = "Scholarship",
       income = "Side income",
@@ -66,8 +73,7 @@ class IncomeButton extends StatelessWidget {
         children: [
           buildMaterialButton(context, Icons.family_restroom, parent),
           buildMaterialButton(context, Icons.school, scholar),
-          buildMaterialButton(
-              context, Icons.vertical_align_bottom_rounded, income),
+          buildMaterialButton(context, Icons.vertical_align_bottom_rounded, income),
           buildMaterialButton(context, Icons.volunteer_activism, baitul),
           Text("\n$parent", textAlign: TextAlign.center),
           Text("\n$scholar", textAlign: TextAlign.center),
@@ -75,26 +81,18 @@ class IncomeButton extends StatelessWidget {
           Text("\n$baitul", textAlign: TextAlign.center),
         ]);
   }
-
-  MaterialButton buildMaterialButton(
-      BuildContext context, IconData icon, String details) {
-    return MaterialButton(
-      color: Colors.grey[300],
-      shape: CircleBorder(),
-      textColor: Colors.black,
-      child: Icon(icon),
-      onPressed: () {
-        createAlertDialog(context, details);
-      },
-    );
-  }
 }
 
-class ExpenseButton extends StatelessWidget {
+class ExpenseButton extends StatefulWidget {
   const ExpenseButton({
     Key key,
   }) : super(key: key);
 
+  @override
+  _ExpenseButtonState createState() => _ExpenseButtonState();
+}
+
+class _ExpenseButtonState extends State<ExpenseButton> {
   final String food = "Food",
       equip = "Equipment",
       save = "Saving",
@@ -128,19 +126,18 @@ class ExpenseButton extends StatelessWidget {
           Text("\nEducation", textAlign: TextAlign.center),
         ]);
   }
+}
 
-  MaterialButton buildMaterialButton(
-      BuildContext context, IconData icon, String details) {
-    return MaterialButton(
-      color: Colors.grey[300],
-      shape: CircleBorder(),
-      textColor: Colors.black,
-      child: Icon(icon),
-      onPressed: () {
-        createAlertDialog(context, details);
-      },
-    );
-  }
+buildMaterialButton(BuildContext context, IconData icon, String details) {
+  return MaterialButton(
+    color: Colors.grey[300],
+    shape: CircleBorder(),
+    textColor: Colors.black,
+    child: Icon(icon),
+    onPressed: () {
+      createAlertDialog(context, details);
+    },
+  );
 }
 
 createAlertDialog(BuildContext context, String details) {
