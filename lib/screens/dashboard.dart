@@ -114,7 +114,10 @@ class _dashboardScreenState extends State<dashboardScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  CircleAvatar(),
+                  CircleAvatar(
+                    backgroundImage: NetworkImage(
+                        "https://cdn1.iconfinder.com/data/icons/circle-outlines-colored/512/User_Account_Person_Avatar_Profile_Man_Head-512.png"),
+                  ),
                   SizedBox(height: 10),
                   Text('Afif Marzuki'),
                 ],
@@ -191,7 +194,7 @@ class _dashboardScreenState extends State<dashboardScreen> {
 
   Container buildContainer1(String caption, double value) {
     return Container(
-      width: 180,
+      width: 190,
       child: Card(
         elevation: 5,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),

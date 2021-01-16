@@ -58,7 +58,7 @@ class _MyProfile extends State<MyProfile> {
                             BoxShadow(
                               spreadRadius: 2,
                               blurRadius: 10,
-                              color: Colors.yellow.withOpacity(0.8),
+                              color: Colors.yellow.withOpacity(0.7),
                               offset: Offset(0, 10),
                             )
                           ],
