@@ -23,9 +23,7 @@ class _PreviousRecState extends State<PreviousRec> {
       appBar: AppBar(
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.pop(context);
-          },
+          onPressed: () => Navigator.pop(context),
         ),
         title: DropdownButton(
             value: dropdownValue,
@@ -71,12 +69,11 @@ class _PreviousRecState extends State<PreviousRec> {
     return Container(
       width: 380,
       height: 250,
-      child: RaisedButton(
+      child: Card(
         elevation: 5,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10)),
-          color: Colors.white,
-          onPressed: () {},
+          //color: Colors.white,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [

@@ -1,5 +1,7 @@
+import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:ka_ching/screens/settings_black.dart';
+
+bool current = false;
 
 class Settings extends StatefulWidget {
   @override
@@ -11,14 +13,14 @@ class _Settings extends State<Settings> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        //backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         elevation: 1,
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back,
-            color: Colors.black,
+            //color: Colors.black,
           ),
-          onPressed: () => Navigator.pop(context),
+          onPressed: (){Navigator.pop(context);},
         ),
       ),
       body: Container(
@@ -44,13 +46,23 @@ class _Settings extends State<Settings> {
                         subtitle: Text("Theme"),
                         title: Text("Dark Mode"),
                         trailing: Switch(
-                          value: false,
-                          onChanged: (bool val) => Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (BuildContext context) =>
-                                  SettingsBlack(),
-                            ),
-                          ),
+                          value: current,
+                          onChanged: (value){
+                            setState(() {
+                              current = value;
+                          
+                              if(current == true){
+                                //DynamicTheme.of(context).setBrightness(Brightness.dark);
+                                DynamicTheme.of(context).setThemeData(ThemeData(
+                                  appBarTheme: AppBarTheme(color: Colors.yellow[700]),
+                                  brightness: Brightness.dark,
+                                ));
+                              }
+                              else{
+                                DynamicTheme.of(context).setBrightness(Brightness.light);
+                              }
+                            });
+                          },
                         ),
                       ),
                       ListTile(
@@ -73,4 +85,7 @@ class _Settings extends State<Settings> {
       ),
     );
   }
+
 }
+
+

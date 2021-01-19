@@ -13,12 +13,9 @@ class _AddscreenState extends State<Addscreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.pop(context);
-          },
+          onPressed: () => Navigator.pop(context),
         ),
         title: DropdownButton(
             value: dropdownValue,
@@ -41,7 +38,6 @@ class _AddscreenState extends State<Addscreen> {
       ),
       body: Center(
         child: Container(
-            color: Colors.white,
             child: (type % 2 == 1) ? IncomeButton() : ExpenseButton()
         )
       ),
@@ -49,16 +45,7 @@ class _AddscreenState extends State<Addscreen> {
   }
 }
 
-class IncomeButton extends StatefulWidget {
-  const IncomeButton({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  _IncomeButtonState createState() => _IncomeButtonState();
-}
-
-class _IncomeButtonState extends State<IncomeButton> {
+class IncomeButton extends StatelessWidget {
   final String parent = "Parents support",
       scholar = "Scholarship",
       income = "Side income",
@@ -83,16 +70,7 @@ class _IncomeButtonState extends State<IncomeButton> {
   }
 }
 
-class ExpenseButton extends StatefulWidget {
-  const ExpenseButton({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  _ExpenseButtonState createState() => _ExpenseButtonState();
-}
-
-class _ExpenseButtonState extends State<ExpenseButton> {
+class ExpenseButton extends StatelessWidget{
   final String food = "Food",
       equip = "Equipment",
       save = "Saving",

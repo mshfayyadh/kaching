@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ka_ching/models/profile_data.dart';
 import 'package:pie_chart/pie_chart.dart';
 import 'package:ka_ching/models/income.dart';
 import 'package:ka_ching/models/expense.dart';
@@ -63,7 +62,7 @@ class _dashboardScreenState extends State<dashboardScreen> {
                       elevation: 5,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
-                      color: Colors.white,
+                      //color: Colors.white,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
@@ -174,7 +173,7 @@ class _dashboardScreenState extends State<dashboardScreen> {
       child: Card(
         elevation: 5,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-        color: Colors.white,
+        //color: Colors.white,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
@@ -199,7 +198,7 @@ class _dashboardScreenState extends State<dashboardScreen> {
       child: Card(
         elevation: 5,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-        color: Colors.white,
+        //color: Colors.white,
         child: Column(
           children: [
             Text(caption, style: TextStyle(height: 1.5, fontSize: 12)),
