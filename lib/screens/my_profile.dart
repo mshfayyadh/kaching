@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:ka_ching/models/profile_data.dart';
+import 'package:map_profile/edit_profile.dart';
+import 'package:map_profile/models/profile_data.dart';
 
-import 'edit_profile.dart';
-
+// ignore: must_be_immutable
 class MyProfile extends StatefulWidget {
-  final ProfileData data;
+  ProfileData data;
 
   MyProfile(this.data);
 
@@ -17,16 +17,14 @@ class _MyProfile extends State<MyProfile> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         elevation: 1,
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back,
             color: Colors.black,
           ),
-          onPressed: () {
-            Navigator.pop(context);
-          },
+          onPressed: () {},
         ),
       ),
       body: Container(
@@ -58,7 +56,7 @@ class _MyProfile extends State<MyProfile> {
                             BoxShadow(
                               spreadRadius: 2,
                               blurRadius: 10,
-                              color: Colors.yellow.withOpacity(0.7),
+                              color: Colors.yellow.withOpacity(0.8),
                               offset: Offset(0, 10),
                             )
                           ],
@@ -106,10 +104,17 @@ class _MyProfile extends State<MyProfile> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   RaisedButton(
-                    onPressed: () => Navigator.of(context).push(
+                    onPressed: () async {
+                      final returnData = await Navigator.push(
+                        context,
                         MaterialPageRoute(
-                            builder: (BuildContext context) =>
-                                EditProfile(widget.data))),
+                            builder: (context) => EditProfile(widget.data)),
+                      );
+
+                      if (returnData != null) {
+                        setState(() => widget.data = returnData);
+                      }
+                    },
                     color: Colors.yellow,
                     padding: EdgeInsets.symmetric(horizontal: 50),
                     elevation: 2,
