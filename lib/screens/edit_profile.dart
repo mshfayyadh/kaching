@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ka_ching/models/profile_data.dart';
+import 'package:map_profile/models/profile_data.dart';
 //import 'dart:async';
 
 class EditProfile extends StatefulWidget {
@@ -11,20 +11,6 @@ class EditProfile extends StatefulWidget {
 }
 
 class _EditProfile extends State<EditProfile> {
-  TextEditingController _c;
-
-  @override
-  void initState() {
-    _c = new TextEditingController();
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    _c?.dispose();
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     String fname = widget.editData.first;
@@ -34,7 +20,7 @@ class _EditProfile extends State<EditProfile> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         elevation: 1,
         leading: IconButton(
           icon: Icon(
@@ -93,19 +79,75 @@ class _EditProfile extends State<EditProfile> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
               ),
-              buildtextField("First Name", fname),
+              TextField(
+                decoration: InputDecoration(
+                    contentPadding: EdgeInsets.only(bottom: 8.0),
+                    labelText: "First Name",
+                    floatingLabelBehavior: FloatingLabelBehavior.always,
+                    hintText: fname,
+                    hintStyle: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    )),
+                onChanged: (String text) async {
+                  fname = text;
+                },
+              ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
               ),
-              buildtextField("Last Name", lname),
+              TextField(
+                decoration: InputDecoration(
+                    contentPadding: EdgeInsets.only(bottom: 8.0),
+                    labelText: "Last Name",
+                    floatingLabelBehavior: FloatingLabelBehavior.always,
+                    hintText: lname,
+                    hintStyle: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    )),
+                onChanged: (String text) async {
+                  lname = text;
+                },
+              ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
               ),
-              buildtextField("Email", mail),
+              TextField(
+                decoration: InputDecoration(
+                    contentPadding: EdgeInsets.only(bottom: 8.0),
+                    labelText: "Email",
+                    floatingLabelBehavior: FloatingLabelBehavior.always,
+                    hintText: mail,
+                    hintStyle: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    )),
+                onChanged: (String text) async {
+                  mail = text;
+                },
+              ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
               ),
-              buildtextField("Contact Number", ph),
+              TextField(
+                decoration: InputDecoration(
+                    contentPadding: EdgeInsets.only(bottom: 8.0),
+                    labelText: "Contact Number",
+                    floatingLabelBehavior: FloatingLabelBehavior.always,
+                    hintText: ph,
+                    hintStyle: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    )),
+                onChanged: (String text) async {
+                  ph = text;
+                },
+              ),
               SizedBox(
                 height: 35,
               ),
@@ -128,8 +170,7 @@ class _EditProfile extends State<EditProfile> {
                   RaisedButton(
                     onPressed: () {
                       setState(() {
-                        _c.text = fname;
-                        widget.editData.first = _c.text;
+                        widget.editData.first = fname;
                         widget.editData.last = lname;
                         widget.editData.email = mail;
                         widget.editData.phone = ph;
@@ -156,25 +197,6 @@ class _EditProfile extends State<EditProfile> {
           ),
         ),
       ),
-    );
-  }
-
-  Widget buildtextField(String labelText, String placeholder) {
-    return TextField(
-      decoration: InputDecoration(
-          contentPadding: EdgeInsets.only(bottom: 8.0),
-          labelText: labelText,
-          floatingLabelBehavior: FloatingLabelBehavior.always,
-          hintText: placeholder,
-          hintStyle: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
-          )),
-      onChanged: (val) => setState(() {
-        placeholder = val;
-      }),
-      controller: _c,
     );
   }
 }
