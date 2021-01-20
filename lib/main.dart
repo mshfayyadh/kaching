@@ -28,14 +28,6 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: theme,
-          //ThemeData(
-            //primaryColor: Colors.white,
-            //brightness: Brightness.dark,
-            //appBarTheme: AppBarTheme(color: Colors.yellow[700]),
-            //textTheme: TextTheme( bodyText2: TextStyle(color: Colors.white)),
-            //scaffoldBackgroundColor: Colors.grey,
-          //),
-          //home: AboutScreen(),
           initialRoute: '/',
           routes: {
             '/': (context) => WelcomeScreen(),

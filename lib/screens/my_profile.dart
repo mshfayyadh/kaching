@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:map_profile/edit_profile.dart';
-import 'package:map_profile/models/profile_data.dart';
+import '../screens/edit_profile.dart';
+import '../models/profile_data.dart';
 
 // ignore: must_be_immutable
 class MyProfile extends StatefulWidget {
