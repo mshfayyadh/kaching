@@ -1,0 +1,18 @@
+{
+    "incomes": [
+        {
+            "id": 1,
+            "userId": 1,
+            "details": "Parents support",
+            "value": 200,
+            "months": "January"
+        },
+        {
+            "id": 2,
+            "userId": 1,
+            "details": "Scholarship",
+            "value": 3000,
+            "months": "January"
+        }
+    ]
+}

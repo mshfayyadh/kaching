@@ -16,6 +16,7 @@ class _PreviousRecState extends State<PreviousRec> {
   String dropdownValue = "January";
   List<String> months =
   ['January', 'February','March', 'April','May', 'June','July', 'August','September', 'October','November', 'December'];
+  int currMonth = new DateTime.now().month;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,7 @@ class _PreviousRecState extends State<PreviousRec> {
           onPressed: () => Navigator.pop(context),
         ),
         title: DropdownButton(
-            value: dropdownValue,
+            value: months.elementAt(currMonth-1),
             items: months.map<DropdownMenuItem<String>>((String value) {
               return DropdownMenuItem<String>(
                 value: value,

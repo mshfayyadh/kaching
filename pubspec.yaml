@@ -26,6 +26,7 @@ dependencies:
   animated_splash_screen: ^1.0.1+2
   cupertino_icons: ^1.0.0
   dynamic_theme: ^1.0.1
+  http: ^0.12.0
   pie_chart: ^4.0.1
 
 dev_dependencies:

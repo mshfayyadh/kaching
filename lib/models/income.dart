@@ -2,8 +2,22 @@ class Income
 {
   String details;
   double value;
+  String id;
+  String userId;
+  String month;
 
-  Income({this.details,this.value});
+  Income({this.id,this.userId,this.details,this.value,this.month});
+
+  Income.fromJson(Map<String, dynamic> json)
+      : this(
+          id: json['id'].toString(),  
+          userId: json['userId'].toString(),
+          details: json['details'],
+          value: json['value'],
+          month: json['month']);
+
+  Map<String, dynamic> toJson() =>
+      {'id': id, 'userId': userId, 'details': details, 'value': value, 'month': month};
 
   Map<String, double> income() => {
     "Shcolarship": 5,
