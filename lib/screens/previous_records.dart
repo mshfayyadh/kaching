@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:ka_ching/screens/prev_rec_viewmodel.dart';
 
 import 'dashboard.dart';
 import 'package:ka_ching/models/income.dart';
 import 'package:ka_ching/models/expense.dart';
 
-import 'prefViewModel.dart';
 
 class PreviousRec extends StatefulWidget {
   @override
