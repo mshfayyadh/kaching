@@ -10,37 +10,43 @@ import 'screens/splashScreen.dart';
 import 'screens/about.dart';
 import 'screens/addScreen.dart';
 import 'screens/dashboard.dart';
+import 'screens/register.dart';
 
-ProfileData profile = new ProfileData("Afif", "Marzuqi", "am@gmail.com", "013-3333310");
+ProfileData profile = new ProfileData(
+    id: "1",
+    first: "Afif",
+    last: "Marzuqi",
+    email: "am@gmail.com",
+    phone: "013-3333310");
 var brightness = Brightness.light;
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-    
   @override
   Widget build(BuildContext context) {
-    return  DynamicTheme(
-      defaultBrightness: Brightness.light,
-      data: (brightness) => ThemeData(primaryColor: Colors.white, brightness: brightness),
-      themedWidgetBuilder: (context, theme) {
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          theme: theme,
-          initialRoute: '/',
-          routes: {
-            '/': (context) => WelcomeScreen(),
-            '/load': (context) => SplashScreen(),
-            '/id': (context) => dashboardScreen(),
-            '/add': (context) => Addscreen(),
-            '/record': (context) => PreviousRec(),
-            '/profile': (context) => MyProfile(profile),
-            '/setting': (context) => Settings(),
-            '/about': (context) => AboutScreen(),
-          },
-        );
-      }
-    );
+    return DynamicTheme(
+        defaultBrightness: Brightness.light,
+        data: (brightness) =>
+            ThemeData(primaryColor: Colors.white, brightness: brightness),
+        themedWidgetBuilder: (context, theme) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            theme: theme,
+            initialRoute: '/',
+            routes: {
+              '/': (context) => WelcomeScreen(),
+              '/load': (context) => SplashScreen(),
+              '/id': (context) => dashboardScreen(),
+              '/add': (context) => Addscreen(),
+              '/record': (context) => PreviousRec(),
+              '/profile': (context) => MyProfile(profile),
+              '/setting': (context) => Settings(),
+              '/about': (context) => AboutScreen(),
+              '/register': (context) => registerScreen(),
+            },
+          );
+        });
   }
 }

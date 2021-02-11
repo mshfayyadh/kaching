@@ -14,5 +14,24 @@
             "value": 3000,
             "months": "January"
         }
+    ],
+
+    "profile": [
+        {
+            "id": 1,
+            "first": "Risshe",
+            "last": "Peter",
+            "email": "r@p",
+            "phone": "0123456789",
+            "pass": "12345678"
+        },
+        {
+            "id": 2,
+            "first":"Haries",
+            "last": "Alias",
+            "email": "h@a",
+            "phone": "0123456798",
+            "pass": "12345678"
+        }
     ]
 }
