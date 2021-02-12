@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ka_ching/screens/register_viewmodel.dart';
+import 'package:ka_ching/screens/viewmodel/register_viewmodel.dart';
 
 class registerScreen extends StatefulWidget {
   @override

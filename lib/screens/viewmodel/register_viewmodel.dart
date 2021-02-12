@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:ka_ching/models/profile_data.dart';
 
-import '../services/register_service.dart';
+import '../../services/register_service.dart';
 
 class RegisterViewModel extends ChangeNotifier {
   RegisterService dataService;

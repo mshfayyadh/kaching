@@ -16,6 +16,23 @@
         }
     ],
 
+    "expenses": [
+        {
+            "id": 1,
+            "userId": 1,
+            "details": "Food",
+            "value": 200,
+            "months": "January"
+        },
+        {
+            "id": 2,
+            "userId": 1,
+            "details": "Entertaiment",
+            "value": 100,
+            "months": "January"
+        }
+    ],
+
     "profile": [
         {
             "id": 1,

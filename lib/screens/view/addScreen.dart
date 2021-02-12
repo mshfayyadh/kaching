@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'addScreen_viewmodel.dart';
 
 class Addscreen extends StatefulWidget {
   @override

@@ -2,15 +2,15 @@ import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:flutter/material.dart';
 
 import 'models/profile_data.dart';
-import 'screens/login.dart';
-import 'screens/my_profile.dart';
-import 'screens/previous_records.dart';
-import 'screens/settings.dart';
-import 'screens/splashScreen.dart';
-import 'screens/about.dart';
-import 'screens/addScreen.dart';
-import 'screens/dashboard.dart';
-import 'screens/register.dart';
+import 'screens/view/login.dart';
+import 'screens/view/my_profile.dart';
+import 'screens/view/previous_records.dart';
+import 'screens/view/settings.dart';
+import 'screens/view/splashScreen.dart';
+import 'screens/view/about.dart';
+import 'screens/view/addScreen.dart';
+import 'screens/view/dashboard.dart';
+import 'screens/view/register.dart';
 
 ProfileData profile = new ProfileData(
     id: "1",
