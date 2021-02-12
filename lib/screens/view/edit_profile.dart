@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ka_ching/models/profile_data.dart';
+import 'package:ka_ching/screens/viewmodel/update_viewmodel.dart';
 //import 'dart:async';
 
 class EditProfile extends StatefulWidget {
@@ -11,6 +12,23 @@ class EditProfile extends StatefulWidget {
 }
 
 class _EditProfile extends State<EditProfile> {
+  TextEditingController first = new TextEditingController();
+  TextEditingController last = new TextEditingController();
+  TextEditingController email = new TextEditingController();
+  TextEditingController phone = new TextEditingController();
+  TextEditingController pass = new TextEditingController();
+
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is disposed.
+    first.dispose();
+    last.dispose();
+    email.dispose();
+    phone.dispose();
+    pass.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     String fname = widget.editData.first;
@@ -80,6 +98,7 @@ class _EditProfile extends State<EditProfile> {
                 padding: const EdgeInsets.all(8.0),
               ),
               TextField(
+                controller: first,
                 decoration: InputDecoration(
                     contentPadding: EdgeInsets.only(bottom: 8.0),
                     labelText: "First Name",
@@ -98,6 +117,7 @@ class _EditProfile extends State<EditProfile> {
                 padding: const EdgeInsets.all(8.0),
               ),
               TextField(
+                controller: last,
                 decoration: InputDecoration(
                     contentPadding: EdgeInsets.only(bottom: 8.0),
                     labelText: "Last Name",
@@ -116,6 +136,7 @@ class _EditProfile extends State<EditProfile> {
                 padding: const EdgeInsets.all(8.0),
               ),
               TextField(
+                controller: email,
                 decoration: InputDecoration(
                     contentPadding: EdgeInsets.only(bottom: 8.0),
                     labelText: "Email",
@@ -134,6 +155,7 @@ class _EditProfile extends State<EditProfile> {
                 padding: const EdgeInsets.all(8.0),
               ),
               TextField(
+                controller: phone,
                 decoration: InputDecoration(
                     contentPadding: EdgeInsets.only(bottom: 8.0),
                     labelText: "Contact Number",
@@ -175,6 +197,14 @@ class _EditProfile extends State<EditProfile> {
                         widget.editData.email = mail;
                         widget.editData.phone = ph;
                       });
+                      UpdateViewModel().updateUser(
+                        first: first.toString(),
+                        last: last.toString(),
+                        email: email.toString(),
+                        phone: phone.toString(),
+                        pass: pass.toString(),
+                        id: 1,
+                      );
 
                       Navigator.pop(context);
                     },
@@ -200,3 +230,4 @@ class _EditProfile extends State<EditProfile> {
     );
   }
 }
+
