@@ -103,7 +103,7 @@ class _EditProfile extends State<EditProfile> {
                     contentPadding: EdgeInsets.only(bottom: 8.0),
                     labelText: "First Name",
                     floatingLabelBehavior: FloatingLabelBehavior.always,
-                    hintText: fname,
+                    //hintText: fname,
                     hintStyle: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
@@ -122,7 +122,7 @@ class _EditProfile extends State<EditProfile> {
                     contentPadding: EdgeInsets.only(bottom: 8.0),
                     labelText: "Last Name",
                     floatingLabelBehavior: FloatingLabelBehavior.always,
-                    hintText: lname,
+                    //hintText: lname,
                     hintStyle: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
@@ -141,7 +141,7 @@ class _EditProfile extends State<EditProfile> {
                     contentPadding: EdgeInsets.only(bottom: 8.0),
                     labelText: "Email",
                     floatingLabelBehavior: FloatingLabelBehavior.always,
-                    hintText: mail,
+                    //hintText: mail,
                     hintStyle: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
@@ -160,7 +160,7 @@ class _EditProfile extends State<EditProfile> {
                     contentPadding: EdgeInsets.only(bottom: 8.0),
                     labelText: "Contact Number",
                     floatingLabelBehavior: FloatingLabelBehavior.always,
-                    hintText: ph,
+                    //hintText: ph,
                     hintStyle: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
@@ -190,24 +190,6 @@ class _EditProfile extends State<EditProfile> {
                     ),
                   ),
                   RaisedButton(
-                    onPressed: () {
-                      setState(() {
-                        widget.editData.first = fname;
-                        widget.editData.last = lname;
-                        widget.editData.email = mail;
-                        widget.editData.phone = ph;
-                      });
-                      UpdateViewModel().updateUser(
-                        first: first.toString(),
-                        last: last.toString(),
-                        email: email.toString(),
-                        phone: phone.toString(),
-                        pass: pass.toString(),
-                        id: 1,
-                      );
-
-                      Navigator.pop(context);
-                    },
                     color: Colors.green,
                     padding: EdgeInsets.symmetric(horizontal: 50),
                     elevation: 2,
@@ -220,6 +202,25 @@ class _EditProfile extends State<EditProfile> {
                           letterSpacing: 2.2,
                           color: Colors.white),
                     ),
+                    onPressed: () {
+                      setState(() {
+                        // widget.editData.first = fname;
+                        // widget.editData.last = lname;
+                        // widget.editData.email = mail;
+                        // widget.editData.phone = ph;
+                      });
+                      UpdateViewModel().updateUser(
+                        first: first.text,
+                        last: last.text,
+                        email: email.text,
+                        phone: phone.text,
+                        //pass: pass.toString(),
+                        id: 1,
+                      );
+                      //UpdateViewModel().onChange();
+
+                      Navigator.pop(context);
+                    },
                   )
                 ],
               )

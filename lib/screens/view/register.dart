@@ -137,11 +137,11 @@ class _registerScreenState extends State<registerScreen> {
             textColor: Colors.white,
             onPressed: () {
               RegisterViewModel().addUser(
-                first: first.toString(),
-                last: last.toString(),
-                email: email.toString(),
-                phone: phone.toString(),
-                pass: pass.toString(),
+                first: first.text,
+                last: last.text,
+                email: email.text,
+                phone: phone.text,
+                pass: pass.text,
               );
               Navigator.pushNamed(context, '/load');
             },

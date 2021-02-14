@@ -1,32 +1,56 @@
 import 'package:flutter/material.dart';
+import 'package:ka_ching/app/dependecies.dart';
 import 'package:ka_ching/models/expense.dart';
 import 'package:ka_ching/models/income.dart';
-import 'package:ka_ching/services/past_service.dart';
+import 'package:ka_ching/screens/viewmodel.dart';
+import 'package:ka_ching/services/prev_service.dart';
 
-class PrevViewModel extends ChangeNotifier {
-  PastService dataService;
+class PrevViewModel extends Viewmodel {
+  PastService get dataService => dependency();
   Map<String, double> incomes;
   Map<String, double> expenses;
   List<Income> ilist;
   List<Expense> elist;
+  double totalIncome;
+  double totalExpense;
 
-  Future<void> getIncomeList(String months) async {
-    if (months == null) return;
-    ilist = await dataService.getIncomeList(months: months);
-    for (int i = 0; i < ilist.length; i++) {
-      incomes.putIfAbsent(
-          ilist.elementAt(0).details, () => ilist.elementAt(0).value);
-    }
-    notifyListeners();
+  void init() {
+    incomes = { };
+    expenses = { };
+    totalExpense = 0;
+    totalIncome = 0;
   }
 
-  Future<void> getExpenseList(String months) async {
+  void getIncomeList(String months) async {
     if (months == null) return;
+
+    turnBusy();
+    ilist = await dataService.getIncomeList(months: months);
+    
+    ilist.forEach((customer) => incomes[customer.details.toString()] = customer.value.toDouble());
+      
+    // notifyListeners();
+    turnIdle();
+  }
+
+  void getExpenseList(String months) async {
+    if (months == null) return;
+
+    turnBusy();
     elist = await dataService.getExpenseList(months: months);
-    for (int i = 0; i < elist.length; i++) {
-      expenses.putIfAbsent(
-          elist.elementAt(0).details, () => elist.elementAt(0).value);
-    }
-    notifyListeners();
+
+    elist.forEach((customer) => expenses[customer.details.toString()] = customer.value.toDouble());
+
+    turnIdle();
+  }
+
+  double getBalance(){
+    totalIncome = 0;
+    totalExpense = 0;
+
+    elist.forEach((e) => totalExpense = totalExpense + e.value.toDouble());
+    ilist.forEach((i) => totalIncome = totalIncome + i.value.toDouble());
+
+    return (totalIncome-totalExpense);
   }
 }

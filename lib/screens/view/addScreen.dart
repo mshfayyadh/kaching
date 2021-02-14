@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:ka_ching/screens/viewmodel/addScreen_viewmodel.dart';
+
+import '../view.dart';
 
 
 class Addscreen extends StatefulWidget {
@@ -9,7 +12,7 @@ class Addscreen extends StatefulWidget {
 class _AddscreenState extends State<Addscreen> {
   int type = 1;
   String dropdownValue = "Incomes";
-  TextEditingController value = new TextEditingController();
+  TextEditingController value = TextEditingController();
 
   @override
   void dispose() {
@@ -64,6 +67,7 @@ class _AddscreenState extends State<Addscreen> {
     );
   }
   createAlertDialog(BuildContext context, String details, int type) {
+    value.text = '';
     return showDialog(
       context: context,
       builder: (context) {
@@ -85,6 +89,7 @@ class _AddscreenState extends State<Addscreen> {
               SizedBox(height: 20),
               TextField(
                 controller: value,
+                keyboardType: TextInputType.number,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10)),
@@ -94,17 +99,27 @@ class _AddscreenState extends State<Addscreen> {
             ],
           ),
           actions: <Widget>[
-            MaterialButton(
-              child: Text("Done"),
-              textColor: Colors.yellow[700],
-              onPressed: () {
-                if(type == 1)
-                {}
-                else if(type == 2)
-                {}
+            View<AddScreenViewModel>(
+              builder: (context,viewmodel,_) {
+                return MaterialButton(
+                  child: Text("Done"),
+                  textColor: Colors.yellow[700],
+                  onPressed: () {
+                    if(type % 2 == 1)
+                    { 
+                      viewmodel.addIncome(details: details.toString(),value: double.parse(value.text));
+                      Navigator.pop(context); 
+                    }
+                    else
+                    { 
+                      viewmodel.addExpense(details: details.toString(),value: double.parse(value.text));
+                      Navigator.pop(context); 
+                    }
+                  }
+                );
               }
-            )
-          ],
+            ) 
+          ]
         );
       });
   }

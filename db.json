@@ -1,54 +1,144 @@
 {
-    "incomes": [
-        {
-            "id": 1,
-            "userId": 1,
-            "details": "Parents support",
-            "value": 200,
-            "months": "January"
-        },
-        {
-            "id": 2,
-            "userId": 1,
-            "details": "Scholarship",
-            "value": 3000,
-            "months": "January"
-        }
-    ],
-
-    "expenses": [
-        {
-            "id": 1,
-            "userId": 1,
-            "details": "Food",
-            "value": 200,
-            "months": "January"
-        },
-        {
-            "id": 2,
-            "userId": 1,
-            "details": "Entertaiment",
-            "value": 100,
-            "months": "January"
-        }
-    ],
-
-    "profile": [
-        {
-            "id": 1,
-            "first": "Risshe",
-            "last": "Peter",
-            "email": "r@p",
-            "phone": "0123456789",
-            "pass": "12345678"
-        },
-        {
-            "id": 2,
-            "first":"Haries",
-            "last": "Alias",
-            "email": "h@a",
-            "phone": "0123456798",
-            "pass": "12345678"
-        }
-    ]
+  "incomes": [
+    {
+      "id": 1,
+      "userId": 1,
+      "details": "Parents",
+      "value": 200,
+      "month": "January"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "details": "Scholarship",
+      "value": 3000,
+      "month": "December"
+    },
+    {
+      "id": 3,
+      "userId": "1",
+      "details": "Side income",
+      "value": 1000,
+      "month": "February"
+    },
+    {
+      "id": 4,
+      "userId": "1",
+      "details": "Baitulmal",
+      "value": 100,
+      "month": "February"
+    },
+    {
+      "id": 5,
+      "userId": "1",
+      "details": "Parents support",
+      "value": 100,
+      "month": "February"
+    },
+    {
+      "id": 6,
+      "userId": "1",
+      "details": "Parents support",
+      "value": 10,
+      "month": "February"
+    },
+    {
+      "id": 7,
+      "userId": "1",
+      "details": "Scholarship",
+      "value": 1000,
+      "month": "February"
+    }
+  ],
+  "expenses": [
+    {
+      "id": 1,
+      "userId": 1,
+      "details": "Food",
+      "value": 200.1,
+      "month": "January"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "details": "Entertaiment",
+      "value": 100,
+      "month": "January"
+    },
+    {
+      "id": 3,
+      "userId": "1",
+      "details": "Equipment",
+      "value": 50,
+      "month": "February"
+    },
+    {
+      "id": 4,
+      "userId": "1",
+      "details": "Saving",
+      "value": 300,
+      "month": "February"
+    },
+    {
+      "id": 5,
+      "userId": "1",
+      "details": "Food",
+      "value": 100,
+      "month": "February"
+    },
+    {
+      "id": 6,
+      "userId": "1",
+      "details": "Entertaiment",
+      "value": 10,
+      "month": "February"
+    },
+    {
+      "id": 7,
+      "userId": "1",
+      "details": "Fitness",
+      "value": 20,
+      "month": "February"
+    },
+    {
+      "id": 8,
+      "userId": "1",
+      "details": "Fitness",
+      "value": 150,
+      "month": "February"
+    },
+    {
+      "id": 9,
+      "userId": "1",
+      "details": "Transport",
+      "value": 30,
+      "month": "February"
+    }
+  ],
+  "profile": [
+    {
+      "id": 1,
+      "first": "1",
+      "last": "1",
+      "email": "1",
+      "phone": "1",
+      "pass": null
+    },
+    {
+      "id": 2,
+      "first": "Haries",
+      "last": "Alias",
+      "email": "h@a",
+      "phone": "0123456798",
+      "pass": "12345678"
+    },
+    {
+      "id": 3,
+      "first": "tester",
+      "last": "je",
+      "email": "test@testing",
+      "phone": "1234",
+      "pass": "1234"
+    }
+  ]
 }

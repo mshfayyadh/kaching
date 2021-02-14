@@ -12,9 +12,9 @@ class Expense
       : this(
           id: json['id'].toString(),  
           userId: json['userId'].toString(),
-          details: json['details'],
-          value: json['value'],
-          month: json['month']);
+          details: json['details'].toString(),
+          value: json['value'].toDouble(),
+          month: json['month'].toString());
 
   Map<String, dynamic> toJson() =>
       {'id': id, 'userId': userId, 'details': details, 'value': value, 'month': month};

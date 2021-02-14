@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ka_ching/models/profile_data.dart';
+import 'package:ka_ching/screens/viewmodel/update_viewmodel.dart';
 
+import '../view.dart';
 import 'edit_profile.dart';
 
 
@@ -26,7 +28,7 @@ class _MyProfile extends State<MyProfile> {
             Icons.arrow_back,
             color: Colors.black,
           ),
-          onPressed: () {},
+          onPressed: () {Navigator.pop(context);},
         ),
       ),
       body: Container(
@@ -76,28 +78,39 @@ class _MyProfile extends State<MyProfile> {
                 height: 35,
               ),
               Card(
-                child: Container(
+                child: SelectorView<UpdateViewModel,dynamic>(
+                  initViewmodel: (viewmodel) => viewmodel.getUser(),
+                  selector: (_,viewmodel) => viewmodel.busy ? 0 : viewmodel.user,
+                  builder: (context,viewmodel,_) {
+                  final user = viewmodel.user;
+
+                  if(user == null)
+                    return Text("gagal");
+                    
+                  return Container(
                   child: Column(
                     children: <Widget>[
                       ListTile(
                         subtitle: Text("First Name"),
-                        title: new Text(widget.data.first),
+                        title: new Text(user.first),
                       ),
                       ListTile(
                         subtitle: Text("Last Name"),
-                        title: Text(widget.data.last),
+                        title: Text(user.last),
                       ),
                       ListTile(
                         subtitle: Text("Email"),
-                        title: new Text(widget.data.email),
+                        title: new Text(user.email),
                       ),
                       ListTile(
-                        subtitle: Text("Contact Number"),
-                        title: new Text(widget.data.phone),
+                        subtitle: Text("Phone no."),
+                        title: new Text(user.phone),
                       ),
                     ],
                   ),
-                ),
+                  );
+                  }
+                ) 
               ),
               SizedBox(
                 height: 35,

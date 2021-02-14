@@ -1,7 +1,28 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:ka_ching/screens/viewmodel/prev_rec_viewmodel.dart';
 import 'package:pie_chart/pie_chart.dart';
 import 'package:ka_ching/models/income.dart';
 import 'package:ka_ching/models/expense.dart';
+
+import '../view.dart';
+
+final List<String> months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
+  ];
+final int currMonth = new DateTime.now().month;
 
 class dashboardScreen extends StatefulWidget {
   @override
@@ -11,9 +32,11 @@ class dashboardScreen extends StatefulWidget {
 class _dashboardScreenState extends State<dashboardScreen> {
   final i = Income();
   final e = Expense();
+  final String month = months.elementAt(currMonth - 1);
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -28,79 +51,45 @@ class _dashboardScreenState extends State<dashboardScreen> {
           child: Column(
             children: [
               ListTile(
-                  title: Text(
-                'Your balance ',
-                style: TextStyle(fontSize: 18),
-              )),
-              ListTile(
-                  title: Text(
-                'RM 0.00',
-                style: TextStyle(
-                    height: 0, fontSize: 40, fontWeight: FontWeight.bold),
-              )),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  buildContainer1("Income", 0.00),
-                  buildContainer1("Expense", 0.00),
-                ],
+                title: Text('Your balance ', style: TextStyle(fontSize: 18),)
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [buildContainer2("Expenses", e.expense())],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [buildContainer2("Incomes", i.income())],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Container(
-                    width: 390,
-                    child: Card(
-                      elevation: 5,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)),
-                      //color: Colors.white,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
+              SelectorView<PrevViewModel,dynamic>(
+                initViewmodel: (viewmodel) {viewmodel.init();viewmodel.getIncomeList(month);viewmodel.getExpenseList(month);}, 
+                selector: (_, viewmodel) => viewmodel.busy ? 0 : {viewmodel.ilist.length,viewmodel.elist.length},
+                builder: (context,viewmodel,_) {
+                  
+                  final balance = viewmodel.getBalance();
+                  final tincome = viewmodel.totalIncome;
+                  final texpense = viewmodel.totalExpense;
+                  final e = viewmodel.expenses;
+                  final i = viewmodel.incomes;
+
+                  if(balance==null)
+                    return Text("gagal");
+
+                  return Column(
+                    children: [
+                      ListTile(
+                        title: Text('RM '+balance.toString(),style: TextStyle(height: 0, fontSize: 40, fontWeight: FontWeight.bold),),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          ListTile(
-                            title: Text('Recent Transaction',
-                                style: TextStyle(
-                                    height: 1,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold)),
-                          ),
-                          ListTile(
-                            title: Text('Pay for food',
-                                style: TextStyle(fontSize: 18)),
-                            subtitle: Text(
-                              '- RM 20.00',
-                              style: TextStyle(color: Colors.red),
-                            ),
-                          ),
-                          ListTile(
-                            title: Text('Pay for transportation fee',
-                                style: TextStyle(fontSize: 18)),
-                            subtitle: Text('- RM 10.00',
-                                style: TextStyle(color: Colors.red)),
-                          ),
-                          ListTile(
-                            title: Text('Income from BPN',
-                                style: TextStyle(fontSize: 18)),
-                            subtitle: Text('+ RM 100.00',
-                                style: TextStyle(color: Colors.green)),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
+                          buildContainer1("Income", tincome),
+                          buildContainer1("Expense", texpense),
                         ],
                       ),
-                    ),
-                  ),
-                ],
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [buildContainer2("Incomes (${month})", i)],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [buildContainer2("Expenses (${month})", e)],
+                      ),
+                    ],
+                  ); 
+                } 
               ),
             ],
           ),
@@ -175,7 +164,7 @@ class _dashboardScreenState extends State<dashboardScreen> {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         //color: Colors.white,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             ListTile(
               title: Text(caption,
@@ -185,7 +174,7 @@ class _dashboardScreenState extends State<dashboardScreen> {
             SizedBox(
               height: 20,
             ),
-            pieChart(dataMap: chart)
+            chart.isNotEmpty ? pieChart(dataMap: chart) : Text('No data',textAlign: TextAlign.start,)
           ],
         ),
       ),
@@ -229,7 +218,7 @@ class pieChart extends StatelessWidget {
       initialAngleInDegree: 0,
       chartType: ChartType.ring,
       ringStrokeWidth: 32,
-      centerText: "December",
+      //centerText: "December",
       legendOptions: LegendOptions(
         showLegendsInRow: false,
         legendPosition: LegendPosition.right,
