@@ -36,7 +36,7 @@
 
 
 ### Get the list of quotes
-GET {{baseUrl}}/profile
+GET {{baseUrl}}/incomes?January
 
 # ###  Getting a quote for a given id
 ### Create

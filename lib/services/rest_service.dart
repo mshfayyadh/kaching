@@ -5,6 +5,7 @@ class RestService {
   // Change the baseUrl based on your laptop's IP address.
   static const String baseUrl = 'https://us-central1-kaching-b-5d441.cloudfunctions.net/api';
 
+
   Future get(String endpoint) async {
     final response = await http.get('$baseUrl/$endpoint');
 
