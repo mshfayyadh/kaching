@@ -38,13 +38,6 @@
     {
       "id": 6,
       "userId": "1",
-      "details": "Parents support",
-      "value": 10,
-      "month": "February"
-    },
-    {
-      "id": 7,
-      "userId": "1",
       "details": "Scholarship",
       "value": 1000,
       "month": "February"
@@ -98,34 +91,6 @@
       "userId": "1",
       "details": "Fitness",
       "value": 20,
-      "month": "February"
-    },
-    {
-      "id": 8,
-      "userId": "1",
-      "details": "Fitness",
-      "value": 150,
-      "month": "February"
-    },
-    {
-      "id": 9,
-      "userId": "1",
-      "details": "Transport",
-      "value": 30,
-      "month": "February"
-    },
-    {
-      "id": 10,
-      "userId": "1",
-      "details": "Equipment",
-      "value": 100,
-      "month": "February"
-    },
-    {
-      "id": 11,
-      "userId": "1",
-      "details": "Food",
-      "value": 100,
       "month": "February"
     }
   ],

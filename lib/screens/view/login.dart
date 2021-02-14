@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:ka_ching/screens/viewmodel/profile_viewmodel.dart';
+
+import '../view.dart';
 
 class WelcomeScreen extends StatelessWidget {
-  TextEditingController email = new TextEditingController();
+  TextEditingController usrname = new TextEditingController();
   TextEditingController pass = new TextEditingController();
 
   @override
@@ -22,11 +25,11 @@ class WelcomeScreen extends StatelessWidget {
       Container(
         width: 300.0,
         child: TextField(
-          controller: email,
+          controller: usrname,
           style: TextStyle(fontSize: 15.0, height: 1.0, color: Colors.black),
           decoration: InputDecoration(
               contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 10.0, 10.0),
-              hintText: "Email",
+              hintText: "Username (first name)",
               focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(color: Colors.yellow, width: 2.0),
                   borderRadius: BorderRadius.circular(30.0)),
@@ -52,19 +55,28 @@ class WelcomeScreen extends StatelessWidget {
         ),
       ),
       SizedBox(height: 30),
-      FlatButton(
-        padding: EdgeInsets.symmetric(vertical: 15, horizontal: 133),
-        color: Colors.yellow,
-        textColor: Colors.white,
-        onPressed: () {
-          Navigator.pushNamed(context, '/load');
+      View<ProfileViewModel>(
+        initViewmodel: (viewmodel) => viewmodel.getUsers(),
+        builder: (context,viewmodel,_) {
+          bool exist = viewmodel.checkUser(username: usrname.text, password: pass.text);
+          return FlatButton(
+            padding: EdgeInsets.symmetric(vertical: 15, horizontal: 133),
+            color: Colors.yellow,
+            textColor: Colors.white,
+            onPressed: () {
+              if(!exist)
+              Navigator.pushNamed(context, '/load');
+              // else
+              // Text("Not found");
+            },
+            child: Text("Login",
+                style: TextStyle(
+                    fontSize: 19.0, height: 1.0, fontWeight: FontWeight.bold)),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+          );
         },
-        child: Text("Login",
-            style: TextStyle(
-                fontSize: 19.0, height: 1.0, fontWeight: FontWeight.bold)),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
       ),
-      SizedBox(height: 15),
+      SizedBox(height: 5),
       Text(
         "Forgot your password?",
         style: TextStyle(fontSize: 13.0, color: Colors.redAccent),

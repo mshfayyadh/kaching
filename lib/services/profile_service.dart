@@ -19,7 +19,7 @@ class ProfileService {
         .toList();
   }
 
-  Future<ProfileData> updateUser({ProfileData i, int id}) async {
+  Future<ProfileData> updateUser({ProfileData i, String id}) async {
     final json = await rest.patch('profile/$id', data: i);
 
     return ProfileData.fromJson(json);

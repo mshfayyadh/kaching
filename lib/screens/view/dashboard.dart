@@ -42,7 +42,7 @@ class _dashboardScreenState extends State<dashboardScreen> {
         centerTitle: true,
         elevation: 0,
         title: Text(
-          'Hi, Afif Marzuki',
+          'Welcome to Ka-Ching',
           style: TextStyle(fontSize: 16),
         ),
       ),
@@ -70,7 +70,7 @@ class _dashboardScreenState extends State<dashboardScreen> {
                   return Column(
                     children: [
                       ListTile(
-                        title: Text('RM '+balance.toString(),style: TextStyle(height: 0, fontSize: 40, fontWeight: FontWeight.bold),),
+                        title: Text('RM '+balance.toStringAsFixed(2),style: TextStyle(height: 0, fontSize: 40, fontWeight: FontWeight.bold),),
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,

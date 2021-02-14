@@ -29,24 +29,24 @@
 ############################################################################################
 
 # Write your API url. e.g. https://us-central1-jumail-backend-firebase-rest.cloudfunctions.net/api
-@baseUrl = http://192.168.31.1:3000
+@baseUrl = https://us-central1-kaching-b-5d441.cloudfunctions.net/api
 
 ### Example of endpoints for basic CRUD operations.
 #    Later in your submission, leave only the one that you actually use and remove others from this file.
 
 
 ### Get the list of quotes
-GET {{baseUrl}}/expenses?month=February
+GET {{baseUrl}}/profile
 
 # ###  Getting a quote for a given id
 ### Create
-DELETE  {{baseUrl}}/profile/3
-//Content-Type: application/json
+POST {{baseUrl}}/incomes/
+Content-Type: application/json
 
-# {
-    
-#     "userId": 1,
-#     "details": "Side income",
-#     "value": 100.0,
-#     "months": "March", 
-# }
+{
+      "first": "Haries",
+      "last": "Alias",
+      "email": "h@a",
+      "phone": "0123456798",
+      "pass": "12345678"
+},
