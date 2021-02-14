@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ka_ching/models/profile_data.dart';
-import 'package:ka_ching/screens/viewmodel/update_viewmodel.dart';
+import 'package:ka_ching/screens/viewmodel/profile_viewmodel.dart';
 //import 'dart:async';
 
 class EditProfile extends StatefulWidget {
@@ -209,7 +209,7 @@ class _EditProfile extends State<EditProfile> {
                         // widget.editData.email = mail;
                         // widget.editData.phone = ph;
                       });
-                      UpdateViewModel().updateUser(
+                      ProfileViewModel().updateUser(
                         first: first.text,
                         last: last.text,
                         email: email.text,

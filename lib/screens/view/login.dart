@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatelessWidget {
+  TextEditingController email = new TextEditingController();
+  TextEditingController pass = new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,10 +22,11 @@ class WelcomeScreen extends StatelessWidget {
       Container(
         width: 300.0,
         child: TextField(
+          controller: email,
           style: TextStyle(fontSize: 15.0, height: 1.0, color: Colors.black),
           decoration: InputDecoration(
               contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 10.0, 10.0),
-              hintText: "Username",
+              hintText: "Email",
               focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(color: Colors.yellow, width: 2.0),
                   borderRadius: BorderRadius.circular(30.0)),
@@ -34,6 +38,7 @@ class WelcomeScreen extends StatelessWidget {
       Container(
         width: 300.0,
         child: TextField(
+          controller: pass,
           obscureText: true,
           style: TextStyle(fontSize: 15.0, height: 1.0, color: Colors.black),
           decoration: InputDecoration(

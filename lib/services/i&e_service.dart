@@ -1,11 +1,23 @@
 import 'package:ka_ching/app/dependecies.dart';
 import 'package:ka_ching/models/expense.dart';
 import 'package:ka_ching/models/income.dart';
+import 'package:ka_ching/services/rest_service.dart';
 
-import 'rest_service.dart';
-
-class PastService {
+class IEService 
+{
   final rest = dependency<RestService>();
+
+  Future<Income> addIncomes({Income i}) async {
+    final json = await rest.post('incomes', data: i);
+
+    return Income.fromJson(json);
+  }
+
+  Future<Expense> addExpenses({Expense e}) async {
+    final json = await rest.post('expenses', data: e);
+
+    return Expense.fromJson(json);
+  }
 
   Future<List<Income>> getIncomeList({String months}) async {
     final listJson = await rest.get('incomes?month=$months');

@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ka_ching/app/dependecies.dart';
-import 'package:ka_ching/services/prev_service.dart';
-import 'package:provider/provider.dart';
-import 'package:ka_ching/models/profile_data.dart';
 import 'package:ka_ching/screens/viewmodel/prev_rec_viewmodel.dart';
 
 import '../view.dart';

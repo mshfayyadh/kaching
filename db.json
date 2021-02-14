@@ -113,15 +113,29 @@
       "details": "Transport",
       "value": 30,
       "month": "February"
+    },
+    {
+      "id": 10,
+      "userId": "1",
+      "details": "Equipment",
+      "value": 100,
+      "month": "February"
+    },
+    {
+      "id": 11,
+      "userId": "1",
+      "details": "Food",
+      "value": 100,
+      "month": "February"
     }
   ],
   "profile": [
     {
       "id": 1,
-      "first": "1",
-      "last": "1",
-      "email": "1",
-      "phone": "1",
+      "first": "2",
+      "last": "2",
+      "email": "2",
+      "phone": "2",
       "pass": null
     },
     {

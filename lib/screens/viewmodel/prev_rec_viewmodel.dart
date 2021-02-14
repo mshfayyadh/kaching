@@ -3,10 +3,10 @@ import 'package:ka_ching/app/dependecies.dart';
 import 'package:ka_ching/models/expense.dart';
 import 'package:ka_ching/models/income.dart';
 import 'package:ka_ching/screens/viewmodel.dart';
-import 'package:ka_ching/services/prev_service.dart';
+import 'package:ka_ching/services/i&e_service.dart';
 
 class PrevViewModel extends Viewmodel {
-  PastService get dataService => dependency();
+  IEService get dataService => dependency();
   Map<String, double> incomes;
   Map<String, double> expenses;
   List<Income> ilist;

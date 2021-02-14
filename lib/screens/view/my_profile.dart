@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ka_ching/models/profile_data.dart';
-import 'package:ka_ching/screens/viewmodel/update_viewmodel.dart';
+import 'package:ka_ching/screens/viewmodel/profile_viewmodel.dart';
 
 import '../view.dart';
 import 'edit_profile.dart';
@@ -78,7 +78,7 @@ class _MyProfile extends State<MyProfile> {
                 height: 35,
               ),
               Card(
-                child: SelectorView<UpdateViewModel,dynamic>(
+                child: SelectorView<ProfileViewModel,dynamic>(
                   initViewmodel: (viewmodel) => viewmodel.getUser(),
                   selector: (_,viewmodel) => viewmodel.busy ? 0 : viewmodel.user,
                   builder: (context,viewmodel,_) {

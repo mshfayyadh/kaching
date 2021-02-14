@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ka_ching/screens/viewmodel/register_viewmodel.dart';
+import 'package:ka_ching/screens/viewmodel/profile_viewmodel.dart';
 
 class registerScreen extends StatefulWidget {
   @override
@@ -136,7 +136,7 @@ class _registerScreenState extends State<registerScreen> {
             color: Colors.yellow,
             textColor: Colors.white,
             onPressed: () {
-              RegisterViewModel().addUser(
+              ProfileViewModel().addUser(
                 first: first.text,
                 last: last.text,
                 email: email.text,
